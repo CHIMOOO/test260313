@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑白棋 Reversi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/board.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>黑白棋 <span class="sub">Reversi</span></h1>
+    </header>
+
+    <div class="scoreboard">
+      <div class="score-item player-black">
+        <div class="score-piece black-preview"></div>
+        <div class="score-info">
+          <span class="score-label">你（黑棋）</span>
+          <span class="score-num" id="black-score">2</span>
+        </div>
+      </div>
+      <div class="score-vs">VS</div>
+      <div class="score-item player-white">
+        <div class="score-info right">
+          <span class="score-label">AI（白棋）</span>
+          <span class="score-num" id="white-score">2</span>
+        </div>
+        <div class="score-piece white-preview"></div>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <span id="status">轮到你了（黑棋）</span>
+    </div>
+
+    <div class="board-wrapper">
+      <div class="board-labels top">
+        <span>A</span><span>B</span><span>C</span><span>D</span>
+        <span>E</span><span>F</span><span>G</span><span>H</span>
+      </div>
+      <div class="board-with-side">
+        <div class="board-labels side">
+          <span>1</span><span>2</span><span>3</span><span>4</span>
+          <span>5</span><span>6</span><span>7</span><span>8</span>
+        </div>
+        <div id="board" class="board"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="new-game" class="btn btn-primary">新游戏</button>
+      <div class="difficulty">
+        <span class="diff-label">AI难度：</span>
+        <button class="btn diff-btn" data-level="EASY">简单</button>
+        <button class="btn diff-btn active" data-level="MEDIUM">中等</button>
+        <button class="btn diff-btn" data-level="HARD">困难</button>
+      </div>
+    </div>
+
+    <div class="move-log">
+      <div class="log-title">对局记录</div>
+      <div id="move-log" class="log-content"></div>
+    </div>
+  </div>
+
+  <script src="js/constants.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
